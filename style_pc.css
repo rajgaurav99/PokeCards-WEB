@@ -25,7 +25,7 @@ input {
 }
 body{
   padding-left: 100px;
-  background-image: url('images/background.gif');
+  background-image: url('images/background_pc.gif');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
