@@ -5,14 +5,57 @@ input {
   margin-top: 50px;
   float:right;
   border-radius: 100px;
-  padding-left: 30px;
+  padding-left: 70px;
   font-size: 30;
   position:fixed;
   top:100px;
   right:0px;
   border:solid 5px black;
+
+  background-image: url("images/texticon.png");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
+#box{
+
+  width:50%;
+  height:60%;
+  margin-right: 200px;
+  margin-top: 50px;
+  float:right;
+  font-size: 30;
+  position:fixed;
+  top:200px;
+  right:0px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.9);
+}
+
+#evolve_table{
+  margin-top: 10px;
+}
+
+#stats{
+  margin-top: 20px;
+  float:right;
+  margin-right: 100px;
+  font-size: 16;
+  font-family: sans-serif;
+  width:20%;
+}
+
+#boxitem{
+  padding-left:50px;
+  padding-top:10px;
+  font-family: sans-serif;
+  text-align:center;
+}
+#demo{
+  opacity: 100%;
+  margin-left: 60px;
+}
 
 #banner_img{
   height:20%;

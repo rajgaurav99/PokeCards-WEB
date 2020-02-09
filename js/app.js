@@ -10,6 +10,11 @@
     );
     return (mySubString);
     })
+  }).filter('clean',function () {
+    return function (input) {
+      var result=input.replace("Ã©", "e");
+      return result;
+    }
   })
   .filter('hexcolor',function () {
       return function (input) {
@@ -76,5 +81,36 @@
 
  function MainController($scope){
    $scope.pokedata=pokeinfo;
+   $scope.pokemon_name="";
+   $scope.pokemon_species ="";
+   $scope.pokemon_hp="";
+   $scope.pokemon_atk="";
+   $scope.pokemon_def="";
+   $scope.pokemon_spatk="";
+   $scope.pokemon_spdef="";
+   $scope.pokemon_speed="";
+   $scope.pokemon_total="";
+   $scope.pokemon_abilities="";
+   $scope.pokemon_evolution="";
+   $scope.viewinfo="none";
+
+   $scope.showDetails = function(i) {
+        $scope.pokemon_name= i.name;
+        $scope.pokemon_species = i.species;
+        $scope.viewinfo="block";
+        $scope.pokemon_hp=i.stats.hp;
+        $scope.pokemon_atk=i.stats.attack;
+        $scope.pokemon_def=i.stats.defense;
+        $scope.pokemon_spatk=i.stats["sp.atk"];
+        $scope.pokemon_spdef=i.stats["sp.def"];
+        $scope.pokemon_speed=i.stats.speed;
+        $scope.pokemon_total=i.stats.total;
+
+        $scope.pokemon_abilities=i.abilities;
+        $scope.pokemon_evolution=i.evolution;
+        hexagon.init('demo', 120, ['HP', 'ATK', 'DEF', 'SP. ATTACK', 'SP. DEF', 'SPEED']);
+        hexagon.draw([$scope.pokemon_hp/250,$scope.pokemon_atk/134,$scope.pokemon_def/180,$scope.pokemon_spatk/154,$scope.pokemon_spdef/125,$scope.speed/140]);
+
+    };
   }
 })();
