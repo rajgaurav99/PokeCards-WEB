@@ -94,6 +94,10 @@
    $scope.pokemon_evolution="";
    $scope.viewinfo="none";
 
+   $scope.closeinfo=function () {
+     $scope.viewinfo="none";
+   };
+
    $scope.showDetails = function(i) {
         $scope.pokemon_name= i.name;
         $scope.pokemon_species = i.species;
