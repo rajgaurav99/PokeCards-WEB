@@ -1,12 +1,12 @@
 <html ng-app="Pokedex">
-<head><title>PokeCards</title>
+<head><title>PokeCards: The Online PokeDex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/hexagon-chart.js"></script>
   <script type="text/javascript" src="js/pokemons.js">
   </script>
-  <link rel="stylesheet" href="style_mob.css">
-  <link rel="stylesheet" href="style_pc.css">
-  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="style_mob.css"/>
+  <link rel="stylesheet" href="style_pc.css"/>
+  <link rel="icon" href="images/favicon.png"/>
   <script type="text/javascript" src="js/angular.min.js">
   </script>
   <script type="text/javascript" src="js/app.js">
@@ -15,14 +15,15 @@
 
 <body ng-controller="MainController">
   <div id="fixedcon">
-    <img src="images/banner.png" id="banner_img">
-	  <input type="text" ng-model="name" placeholder="Pokemon Search">
+    <img src="images/banner2.png" id="banner_img">
+	  <input type="text" ng-model="name" placeholder="Search Pokemon">
   </div>
   <div id="box" style="display:{{viewinfo}}">
     <div id="boxitem">{{pokemon_name}} ({{pokemon_species|clean}})</div><br>
     <canvas id="demo"></canvas>
     <div id="stats">
-      <table>
+      <table id="statstab">
+
         <tr align="left">
           <th>HP:</th>
           <th>{{pokemon_hp}}</th>
@@ -48,11 +49,11 @@
           <th>{{pokemon_speed}}</th>
         </tr>
       </table>
-    <ul id="ability">
-    <div ng-repeat="ability in pokemon_abilities">
-      <li>{{ability}}
-    </div>
-    </ul>
+      <div id="ability">
+      <li ng-repeat="ability in pokemon_abilities">{{ability}}</li>
+      </div>
+
+
 
     </div>
     <div id="evolve_table">
@@ -63,7 +64,9 @@
     </tr>
     </table>
   </div>
-  <img src="images/close.png" id="close" ng-click="closeinfo()">
+  <div id="close">
+  <img src="images/close.png" ng-click="closeinfo()" height="40" width="40">
+  </div>
   </div>
 
   <div id="break"></div>

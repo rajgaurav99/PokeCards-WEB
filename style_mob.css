@@ -13,8 +13,10 @@ body{
   top:0;
 }
 #banner_img{
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
-  background-color: white;
+  background-color: black;
 }
 
 input {
@@ -23,12 +25,12 @@ input {
   border-radius: 100px;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding-left: 20%;
-  border:solid 5px black;
-  background-image: url("images/texticon.png");
-  background-position: left top;
+  padding-left: 15%;
+  border:solid 2px black;
+  background-image: url("images/favicon.png");
+  background-position: left 10px top 7px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 30px 30px;
   font-size: 25;
   display: inline-block;
 }
@@ -40,8 +42,9 @@ input {
 #close{
   display:block;
   margin: 0 auto;
-  height: 40px;
-  width:40px;
+  position:fixed;
+  top:4%;
+  left:89%;
 }
 
 #card {
@@ -134,7 +137,7 @@ input {
   display: none;
   position: absolute;
   width: 95%;
-  height: 95%;
+  height: 90%;
   background-color: white;
   z-index: 1002;
   overflow: auto;
@@ -143,41 +146,44 @@ input {
 #box{
   width:95%;
   height:90%;
-  font-size: 30;
   position:fixed;
-  top: 50px;
-  bottom: 50px;
+  top: 5%;
+  bottom: 5%;
   border-radius: 10px;
-  border: 5px solid;
+  border: 2px solid;
   background: rgba(255,255,255,0.9);
-  margin: 0 auto;
 }
 
 #evolve_table{
-  margin-top: 10px;
+  margin:0 auto;
 }
 
-#stats{
-  width:50%;
-  margin-top: 20px;
-  padding: 10px;
-  font-family: sans-serif;
-  margin: 0 auto;
-}
 
 #boxitem{
-  padding-top:10px;
+  font-weight: bold;
+  font-size:20;
+  padding-top:2%;
   font-family: sans-serif;
-  text-align:center;
   margin:0 auto;
 }
 #demo{
   opacity: 100%;
   margin:0 auto;
-  margin-bottom: 20px;
+  margin-bottom:10px;
+  height:35%;
 }
 #ability{
-  font-size: 20;
+  font-weight: bold;
+  list-style-position: inside;
+  list-style-type: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+#statstab{
+  width:60%;
+  table-layout: auto;
+  margin: 0 auto;
+}
+
 
 }
