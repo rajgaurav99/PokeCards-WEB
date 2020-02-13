@@ -92,16 +92,16 @@
    $scope.pokemon_total="";
    $scope.pokemon_abilities="";
    $scope.pokemon_evolution="";
-   $scope.viewinfo="none";
+
 
    $scope.closeinfo=function () {
-     $scope.viewinfo="none";
+     $scope.viewinfo=false;
    };
 
    $scope.showDetails = function(i) {
         $scope.pokemon_name= i.name;
         $scope.pokemon_species = i.species;
-        $scope.viewinfo="block";
+        $scope.viewinfo=true;
         $scope.pokemon_hp=i.stats.hp;
         $scope.pokemon_atk=i.stats.attack;
         $scope.pokemon_def=i.stats.defense;

@@ -18,7 +18,7 @@
     <img src="images/banner2.png" id="banner_img">
 	  <input type="text" ng-model="name" placeholder="Search Pokemon">
   </div>
-  <div id="box" style="display:{{viewinfo}}">
+  <div id="box" ng-show="viewinfo">
     <div id="boxitem">{{pokemon_name}} ({{pokemon_species|clean}})</div><br>
     <canvas id="demo"></canvas>
     <div id="stats">
