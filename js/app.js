@@ -2,7 +2,12 @@
   'use strict'
   angular.module("Pokedex",[])
   .controller("MainController",MainController)
-  .filter('extract',function () {
+  .filter('extract',extract)
+  .filter('clean',clean)
+  .filter('hexcolor',hexcolor)
+  .service('PokemonService',PokemonService);
+
+  function extract() {
     return(function(input) {
       var mySubString = input.substring(
       input.lastIndexOf("(") + 1,
@@ -10,77 +15,81 @@
     );
     return (mySubString);
     })
-  }).filter('clean',function () {
+  }
+
+  function hexcolor() {
+    return function (input) {
+      var color="";
+      if(input=="Bug"){
+        color="85A837";
+      }
+      else if(input=="Dragon"){
+        color="9B73DF";
+      }
+      else if(input=="Electric"){
+        color="EAEA1F";
+      }
+      else if(input=="Fighting"){
+        color="";
+      }
+      else if(input=="Fire"){
+        color="DC9338";
+      }
+      else if(input=="Flying"){
+        color="CEBBF9";
+      }
+      else if(input=="Ghost"){
+        color="5D4691";
+      }
+      else if(input=="Grass"){
+        color="38DC56";
+      }
+      else if(input=="Ground"){
+        color="DCD038";
+      }
+      else if(input=="Ice"){
+        color="1FEAE2";
+      }
+      else if(input=="Poison"){
+        color="8D54AA";
+      }
+      else if(input=="Psychic"){
+        color="D24589";
+      }
+      else if(input=="Rock"){
+        color="D0C75E";
+      }
+      else if(input=="Steel"){
+        color="CACACA";
+      }
+      else if(input=="Fairy"){
+        color="E8AFE8";
+      }
+      else if(input=="Dark"){
+        color="877429";
+      }
+      else if(input=="Normal"){
+        color="ADAD5E";
+      }
+      else{
+        color="3881DC";
+      }
+      return color;
+    }
+  }
+
+  function clean() {
     return function (input) {
       var result=input.replace("Ã©", "e");
       return result;
     }
-  })
-  .filter('hexcolor',function () {
-      return function (input) {
-        var color="";
-        if(input=="Bug"){
-          color="85A837";
-        }
-        else if(input=="Dragon"){
-          color="9B73DF";
-        }
-        else if(input=="Electric"){
-          color="EAEA1F";
-        }
-        else if(input=="Fighting"){
-          color="";
-        }
-        else if(input=="Fire"){
-          color="DC9338";
-        }
-        else if(input=="Flying"){
-          color="CEBBF9";
-        }
-        else if(input=="Ghost"){
-          color="5D4691";
-        }
-        else if(input=="Grass"){
-          color="38DC56";
-        }
-        else if(input=="Ground"){
-          color="DCD038";
-        }
-        else if(input=="Ice"){
-          color="1FEAE2";
-        }
-        else if(input=="Poison"){
-          color="8D54AA";
-        }
-        else if(input=="Psychic"){
-          color="D24589";
-        }
-        else if(input=="Rock"){
-          color="D0C75E";
-        }
-        else if(input=="Steel"){
-          color="CACACA";
-        }
-        else if(input=="Fairy"){
-          color="E8AFE8";
-        }
-        else if(input=="Dark"){
-          color="877429";
-        }
-        else if(input=="Normal"){
-          color="ADAD5E";
-        }
-        else{
-          color="3881DC";
-        }
-        return color;
-      }
-  });
+  }
 
-  MainController.$inject=["$scope"];
+  MainController.$inject=["$scope","PokemonService"];
 
- function MainController($scope){
-   $scope.pokedata=pokeinfo;
+ function MainController($scope,PokemonService){
+
+   $scope.pokedata=PokemonService.getData();
    $scope.pokemon_name="";
    $scope.pokemon_species ="";
    $scope.pokemon_hp="";
@@ -116,5 +125,13 @@
         hexagon.draw([$scope.pokemon_hp/250,$scope.pokemon_atk/134,$scope.pokemon_def/180,$scope.pokemon_spatk/154,$scope.pokemon_spdef/125,$scope.speed/140]);
 
     };
+  }
+
+  function PokemonService() {
+    var service=this;
+    service.getData=function () {
+      var result=pokeinfo;
+      return result;
+    }
   }
 })();
