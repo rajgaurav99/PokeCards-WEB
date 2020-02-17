@@ -13,43 +13,43 @@
   </script>
 </head>
 
-<body ng-controller="MainController">
+<body ng-controller="MainController as ctrl">
   <div id="fixedcon">
     <img src="images/banner2.png" id="banner_img">
 	  <input type="text" ng-model="name" placeholder="Search Pokemon">
   </div>
-  <div id="box" ng-show="viewinfo">
-    <div id="boxitem">{{pokemon_name}} ({{pokemon_species|clean}})</div><br>
-    <canvas id="demo"></canvas>
+  <div id="box" ng-show="ctrl.viewinfo">
+    <div id="boxitem">{{ctrl.pokemon_name}} ({{ctrl.pokemon_species|clean}})</div><br>
+    <canvas id="hexagon"></canvas>
     <div id="stats">
       <table id="statstab">
         <tr align="left">
           <th>HP:</th>
-          <th>{{pokemon_hp}}</th>
+          <th>{{ctrl.pokemon_hp}}</th>
         </tr>
         <tr align="left">
           <th>Attack:</th>
-          <th>{{pokemon_atk}}</th>
+          <th>{{ctrl.pokemon_atk}}</th>
         </tr>
         <tr align="left">
           <th>Defense:</th>
-          <th>{{pokemon_def}}</th>
+          <th>{{ctrl.pokemon_def}}</th>
         </tr>
         <tr align="left">
           <th>SP. Attack:</th>
-          <th>{{pokemon_spatk}}</th>
+          <th>{{ctrl.pokemon_spatk}}</th>
         </tr>
         <tr align="left">
           <th>SP. Defense:</th>
-          <th>{{pokemon_spdef}}</th>
+          <th>{{ctrl.pokemon_spdef}}</th>
         </tr>
         <tr align="left">
           <th>Speed:</th>
-          <th>{{pokemon_speed}}</th>
+          <th>{{ctrl.pokemon_speed}}</th>
         </tr>
       </table>
       <div id="ability">
-      <li ng-repeat="ability in pokemon_abilities">{{ability}}</li>
+      <li ng-repeat="ability in ctrl.pokemon_abilities">{{ability}}</li>
       </div>
 
 
@@ -59,17 +59,17 @@
     <table valign="bottom" align="center" cellspacing=10>
     <caption>Evolution Stages</caption>
     <tr>
-      <th ng-repeat="form in pokemon_evolution" style="font-size:{{$index*3+15}};">{{form}}</th>
+      <th ng-repeat="form in ctrl.pokemon_evolution" style="font-size:{{$index*3+15}};">{{form}}</th>
     </tr>
     </table>
   </div>
   <div id="close">
-  <img src="images/close.png" ng-click="closeinfo()" height="40" width="40">
+  <img src="images/close.png" ng-click="ctrl.closeinfo()" height="40" width="40">
   </div>
   </div>
 
   <div id="break"></div>
-  <div ng-repeat="pokemon in pokedata| filter : name" ng-click="showDetails(pokemon)">
+  <div ng-repeat="pokemon in ctrl.pokedata| filter : name" ng-click="ctrl.showDetails(pokemon)">
 
     <div id="card" style="background-image: url('images/card_bg/card_bg{{$index%6}}.jpg');">
       <div id="image" style="background-image: url('images/poke_bg/poke_bg{{$index%5}}.jfif');">

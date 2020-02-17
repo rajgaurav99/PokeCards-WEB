@@ -88,41 +88,30 @@
   MainController.$inject=["$scope","PokemonService"];
 
  function MainController($scope,PokemonService){
+   var ctrl=this;
+   ctrl.pokedata=PokemonService.getData();
+   ctrl.pokemon_species ="";
 
-   $scope.pokedata=PokemonService.getData();
-   $scope.pokemon_name="";
-   $scope.pokemon_species ="";
-   $scope.pokemon_hp="";
-   $scope.pokemon_atk="";
-   $scope.pokemon_def="";
-   $scope.pokemon_spatk="";
-   $scope.pokemon_spdef="";
-   $scope.pokemon_speed="";
-   $scope.pokemon_total="";
-   $scope.pokemon_abilities="";
-   $scope.pokemon_evolution="";
-
-
-   $scope.closeinfo=function () {
-     $scope.viewinfo=false;
+   ctrl.closeinfo=function () {
+     ctrl.viewinfo=false;
    };
 
-   $scope.showDetails = function(i) {
-        $scope.pokemon_name= i.name;
-        $scope.pokemon_species = i.species;
-        $scope.viewinfo=true;
-        $scope.pokemon_hp=i.stats.hp;
-        $scope.pokemon_atk=i.stats.attack;
-        $scope.pokemon_def=i.stats.defense;
-        $scope.pokemon_spatk=i.stats["sp.atk"];
-        $scope.pokemon_spdef=i.stats["sp.def"];
-        $scope.pokemon_speed=i.stats.speed;
-        $scope.pokemon_total=i.stats.total;
+   ctrl.showDetails = function(i) {
+        ctrl.pokemon_name= i.name;
+        ctrl.pokemon_species = i.species;
+        ctrl.viewinfo=true;
+        ctrl.pokemon_hp=i.stats.hp;
+        ctrl.pokemon_atk=i.stats.attack;
+        ctrl.pokemon_def=i.stats.defense;
+        ctrl.pokemon_spatk=i.stats["sp.atk"];
+        ctrl.pokemon_spdef=i.stats["sp.def"];
+        ctrl.pokemon_speed=i.stats.speed;
+        ctrl.pokemon_total=i.stats.total;
 
-        $scope.pokemon_abilities=i.abilities;
-        $scope.pokemon_evolution=i.evolution;
-        hexagon.init('demo', 120, ['HP', 'ATK', 'DEF', 'SP. ATTACK', 'SP. DEF', 'SPEED']);
-        hexagon.draw([$scope.pokemon_hp/250,$scope.pokemon_atk/134,$scope.pokemon_def/180,$scope.pokemon_spatk/154,$scope.pokemon_spdef/125,$scope.speed/140]);
+        ctrl.pokemon_abilities=i.abilities;
+        ctrl.pokemon_evolution=i.evolution;
+        hexagon.init('hexagon', 120, ['HP', 'ATK', 'DEF', 'SP. ATTACK', 'SP. DEF', 'SPEED']);
+        hexagon.draw([ctrl.pokemon_hp/250,ctrl.pokemon_atk/134,ctrl.pokemon_def/180,ctrl.pokemon_spatk/154,ctrl.pokemon_spdef/125,ctrl.speed/140]);
 
     };
   }
