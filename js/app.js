@@ -3,7 +3,6 @@
   angular.module("Pokedex",[])
   .controller("MainController",MainController)
   .filter('extract',extract)
-  .filter('clean',clean)
   .filter('hexcolor',hexcolor)
   .service('PokemonService',PokemonService);
 
@@ -75,13 +74,6 @@
         color="3881DC";
       }
       return color;
-    }
-  }
-
-  function clean() {
-    return function (input) {
-      var result=input.replace("Ã©", "e");
-      return result;
     }
   }
 
