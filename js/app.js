@@ -85,9 +85,9 @@
     }
   }
 
-  MainController.$inject=["$scope","PokemonService"];
+  MainController.$inject=["PokemonService"];
 
- function MainController($scope,PokemonService){
+ function MainController(PokemonService){
    var ctrl=this;
    ctrl.pokedata=PokemonService.getData();
    ctrl.pokemon_species ="";
