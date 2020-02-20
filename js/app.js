@@ -83,12 +83,14 @@
    var ctrl=this;
    ctrl.pokedata=PokemonService.getData();
    ctrl.pokemon_species ="";
+   ctrl.pokemon_id="";
 
    ctrl.closeinfo=function () {
      ctrl.viewinfo=false;
    };
 
    ctrl.showDetails = function(i) {
+        ctrl.id=i.id;
         ctrl.pokemon_name= i.name;
         ctrl.pokemon_species = i.species;
         ctrl.viewinfo=true;

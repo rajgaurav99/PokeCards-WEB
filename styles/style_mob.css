@@ -1,6 +1,6 @@
 @media only screen and (max-width: 700px) {
 body{
-  background-image: url('images/background_mob.gif');
+  background-image: url('../images/background_mob.gif');
   background-repeat: no-repeat;
   background-attachment: fixed;
   text-align: center;
@@ -27,7 +27,7 @@ input {
   margin-bottom: 20px;
   padding-left: 15%;
   border:solid 2px black;
-  background-image: url("images/favicon.png");
+  background-image: url("../images/favicon.png");
   background-position: left 10px top 7px;
   background-repeat: no-repeat;
   background-size: 30px 30px;
@@ -106,7 +106,7 @@ input {
 }
 
 #desc{
-  background-image: url('images/desc_bg.jfif');
+  background-image: url('../images/desc_bg.jfif');
   text-align: justify;
   border:2px solid;
   margin-left: 10px;
