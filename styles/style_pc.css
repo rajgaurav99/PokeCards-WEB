@@ -82,14 +82,6 @@ div {
 	margin: auto;
 }
 
-#cardcon{
-  border: 2px solid;
-  display:inline-block;
-  padding: 5px;
-  text-align:center;
-  align-items: center;
-}
-
 #card {
   border-radius: 10px;
   width:250px;
@@ -101,6 +93,15 @@ div {
   padding-bottom: 25px;
   border: 10px solid;
   border-color: #ffdd00;
+  cursor:pointer;
+  transition: transform .4s;
+}
+
+#card:hover{
+  transform: scale(1.05);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px;
 }
 
 #image {
@@ -163,11 +164,7 @@ div {
   text-align: center;
   width:80px;
 }
-#ability{
-  margin-top: 10px;
-  font-weight: bold;
-  width:60%;
-}
+
 
 #weight{
   float:right;

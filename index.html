@@ -48,19 +48,21 @@
           <th>Speed:</th>
           <th>{{ctrl.pokemon_speed}}</th>
         </tr>
+        <tr ng-repeat="ability in ctrl.pokemon_abilities">
+          <td bgcolor="#ffff99" colspan=2 align="center" style="border:solid 1px black; border-radius:5px;">
+            <b>{{ability}}</b>
+          </td>
+        </tr>
       </table>
-      <div id="ability">
-      <li ng-repeat="ability in ctrl.pokemon_abilities">{{ability}}</li>
-      </div>
-
-
-
     </div>
+
     <div id="evolve_table" ng-if="ctrl.pokemon_evolution.length">
     <table valign="bottom" align="center" cellspacing=10>
-    <caption>Evolution Stages</caption>
+    <caption><b>Evolution Stages</b></caption>
     <tr>
-      <th ng-repeat="form in ctrl.pokemon_evolution" style="font-size:{{$index*3+15}};">{{form}}</th>
+      <th ng-repeat="form in ctrl.pokemon_evolution" style="font-size:{{$index*3+15}};">
+        {{form}}
+      </th>
     </tr>
     </table>
   </div>
@@ -70,7 +72,9 @@
   </div>
 
   <div id="break"></div>
-  <div ng-repeat="pokemon in ctrl.pokedata| filter : name" ng-click="ctrl.showDetails(pokemon)">
+
+
+  <div id="cardcontainer" ng-repeat="pokemon in ctrl.pokedata| filter : name" ng-click="ctrl.showDetails(pokemon)">
 
     <div id="card" style="background-image: url('images/card_bg/card_bg{{$index%6}}.jpg');">
       <div id="image" style="background-image: url('images/poke_bg/poke_bg{{$index%5}}.jfif');">
