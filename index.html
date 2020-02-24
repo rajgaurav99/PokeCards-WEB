@@ -74,7 +74,7 @@
   <div id="break"></div>
 
 
-  <div ng-repeat="pokemon in ctrl.pokedata| filter : name" ng-click="ctrl.showDetails(pokemon)">
+  <div ng-repeat="pokemon in ctrl.pokedata|filter : name|limitTo:20" ng-click="ctrl.showDetails(pokemon)">
 
     <div id="card" style="background-image: url('images/card_bg/card_bg{{$index%6}}.jpg');">
             <div id="gen">{{pokemon.gen|genplace}}</div>
