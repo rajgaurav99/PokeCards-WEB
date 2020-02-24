@@ -86,7 +86,9 @@
       <div  id="typecon" ng-repeat="types in pokemon.type track by $index">
         <div id="type" style="background:#{{types|hexcolor}};">{{types}}</div>
       </div>
-      <div id="desc"><p>{{pokemon.description}}</p>
+      <div id="desc">
+        <p ng-hide="pokemon.description.length">No description availabe for this pokemon till now.</p>
+        <p ng-show="pokemon.description.length">{{pokemon.description}}</p>
           <div id="height"><img src="images/height.png" height=20 width=20>{{pokemon.height|extract}}</div>
           <div id="weight"><img src="images/weight.png" height=20 width=20>{{pokemon.weight|extract}}</div>
       </div>
