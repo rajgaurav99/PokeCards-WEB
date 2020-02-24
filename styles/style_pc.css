@@ -20,7 +20,6 @@ input {
 }
 
 #box{
-
   width:50%;
   height:60%;
   margin-right: 200px;
@@ -31,7 +30,7 @@ input {
   top:180px;
   right:0px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.9);
+  border: solid 2px black;
 }
 
 #evolve_table{
