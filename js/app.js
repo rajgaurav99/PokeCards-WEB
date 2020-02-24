@@ -106,7 +106,7 @@
         ctrl.pokemon_abilities=i.abilities;
         ctrl.pokemon_evolution=i.evolution;
         hexagon.init('hexagon', 120, ['HP', 'ATK', 'DEF', 'SP. ATTACK', 'SP. DEF', 'SPEED']);
-        hexagon.draw([ctrl.pokemon_hp/250,ctrl.pokemon_atk/134,ctrl.pokemon_def/180,ctrl.pokemon_spatk/154,ctrl.pokemon_spdef/125,ctrl.speed/140]);
+        hexagon.draw([ctrl.pokemon_hp/255,ctrl.pokemon_atk/185,ctrl.pokemon_def/230,ctrl.pokemon_spatk/180,ctrl.pokemon_spdef/230,ctrl.speed/180]);
 
     };
   }
