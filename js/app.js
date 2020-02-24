@@ -91,6 +91,7 @@
 
    ctrl.showDetails = function(i) {
         ctrl.id=i.id;
+        ctrl.gen=i.gen;
         ctrl.pokemon_name= i.name;
         ctrl.pokemon_species = i.species;
         ctrl.viewinfo=true;
