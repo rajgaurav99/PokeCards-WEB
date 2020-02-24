@@ -4,6 +4,7 @@
   .controller("MainController",MainController)
   .filter('extract',extract)
   .filter('hexcolor',hexcolor)
+  .filter('genplace',genplace)
   .service('PokemonService',PokemonService);
 
   function extract() {
@@ -13,6 +14,37 @@
       input.lastIndexOf(")")
     );
     return (mySubString);
+    })
+  }
+
+  function genplace() {
+    return(function(input) {
+      var result="";
+      if(input==1){
+        result="Kanto";
+      }
+      else if(input==2){
+        result="Johto";
+      }
+      else if(input==3){
+        result="Hoenn";
+      }
+      else if(input==4){
+        result="Sinnoh";
+      }
+      else if(input==5){
+        result="Unova";
+      }
+      else if(input==6){
+        result="Kalos";
+      }
+      else if(input==7){
+        result="Alola";
+      }
+      else{
+        result="Not Recognized";
+      }
+      return result;
     })
   }
 
