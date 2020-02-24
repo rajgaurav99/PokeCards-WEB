@@ -82,7 +82,7 @@
       </div>
 
       <div id="name">{{pokemon.name}}</div>
-      <div  id="typecon" ng-repeat="types in pokemon.type">
+      <div  id="typecon" ng-repeat="types in pokemon.type track by $index">
         <div id="type" style="background:#{{types|hexcolor}};">{{types}}</div>
       </div>
       <div id="desc"><p>{{pokemon.description}}</p>
