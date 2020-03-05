@@ -1,4 +1,4 @@
-@media only screen and (orientation: portrait) {
+@media only screen and (max-width:1124px) {
 body{
   background-image: url('../images/background_mob.gif');
   background-repeat: no-repeat;

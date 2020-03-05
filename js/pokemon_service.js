@@ -11,7 +11,7 @@
         return $http(
           {
             method:"GET",
-            url:"../data/pokemon_full.json"
+            url:"https://rajgaurav99.github.io/PokeCards/data/pokemon_full.json"
           }
         )
         .then(function (result) {
