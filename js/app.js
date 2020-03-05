@@ -8,7 +8,13 @@
 
  function MainController(PokemonService){
    var ctrl=this;
-   ctrl.pokedata=PokemonService.getData();
+   var promise=PokemonService.getdata();
+   promise.then(function (response) {
+     ctrl.pokedata=response;
+   })
+   .catch(function (error) {
+     console.log("Error in fetching the data from source");
+   });
    ctrl.pokemon_species ="";
    ctrl.pokemon_id="";
 

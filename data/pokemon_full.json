@@ -1,4 +1,4 @@
-pokeinfo=[
+[
   {
     "id": "001",
     "name": "Bulbasaur",
@@ -22031,4 +22031,4 @@ pokeinfo=[
     "description": "",
     "gen": 7
   }
-];
+]
