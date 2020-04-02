@@ -31,8 +31,8 @@
         ctrl.pokemon_hp=i.stats.hp;
         ctrl.pokemon_atk=i.stats.attack;
         ctrl.pokemon_def=i.stats.defense;
-        ctrl.pokemon_spatk=i.stats["sp.atk"];
-        ctrl.pokemon_spdef=i.stats["sp.def"];
+        ctrl.pokemon_spatk=i.stats.spatk;
+        ctrl.pokemon_spdef=i.stats.spdef;
         ctrl.pokemon_speed=i.stats.speed;
         ctrl.pokemon_total=i.stats.total;
 
