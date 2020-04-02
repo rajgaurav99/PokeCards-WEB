@@ -11,7 +11,7 @@
         return $http(
           {
             method:"GET",
-            url:"https://pokecards-1e48b.firebaseio.com/data.json"
+            url:"https://pokecards-1e48b.firebaseio.com/data_array.json"
           }
         )
         .then(function (result) {
